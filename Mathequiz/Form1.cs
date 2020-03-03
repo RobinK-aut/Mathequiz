@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Mathequiz
@@ -51,7 +45,7 @@ namespace Mathequiz
             dividedLeftLabel.Text = dividend.ToString();
             dividedRightLabel.Text = divisor.ToString();
             Quotient.Value = 0;
-            
+
 
             timeLeft = 30;
             timeLabel.Text = "30 seconds";
@@ -97,9 +91,11 @@ namespace Mathequiz
             {
                 timeLeft = timeLeft - 1;
                 timeLabel.Text = timeLeft + " Sekunden";
-                if (timeLeft <=10 && timeLeft > 5){
+                if (timeLeft <= 10 && timeLeft > 5)
+                {
                     timeLabel.BackColor = Color.Yellow;
-                } else if (timeLeft <= 5 && timeLeft > 0)
+                }
+                else if (timeLeft <= 5 && timeLeft > 0)
                 {
                     timeLabel.BackColor = Color.Red;
                     timeLabel.ForeColor = Color.White;
@@ -117,13 +113,13 @@ namespace Mathequiz
                 Quotient.Value = dividend / divisor;
                 startButton.Enabled = true;
                 timeLabel.BackColor = Color.White;
-                timeLabel.ForeColor = Color.Black;          
+                timeLabel.ForeColor = Color.Black;
             }
         }
 
         private bool CheckTheAnswer()
         {
-            if ((addend1 + addend2 == sum.Value) 
+            if ((addend1 + addend2 == sum.Value)
                 && (minuend - subtrahend == Differenz.Value)
                 && (multiplicand * multiplier == Produkt.Value)
                 && (dividend / divisor == Quotient.Value))
